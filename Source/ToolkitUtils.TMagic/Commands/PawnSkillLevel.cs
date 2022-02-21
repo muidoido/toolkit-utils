@@ -1,4 +1,4 @@
-﻿// ToolkitUtils.TMagic
+﻿// ToolkitUtils.Core.TMagic
 // Copyright (C) 2021  SirRandoo
 //
 // This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,6 @@
 
 using System.Linq;
 using JetBrains.Annotations;
-using SirRandoo.ToolkitUtils.Helpers;
 using SirRandoo.ToolkitUtils.Utils;
 using ToolkitCore.Utilities;
 using TorannMagic;

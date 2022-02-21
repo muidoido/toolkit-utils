@@ -1,4 +1,4 @@
-﻿// ToolkitUtils.Ideology
+﻿// ToolkitUtils.Core.Ideology
 // Copyright (C) 2021  SirRandoo
 // 
 // This program is free software: you can redistribute it and/or modify
@@ -16,9 +16,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 using RimWorld;
 using SirRandoo.ToolkitUtils.Helpers;
+using SirRandoo.ToolkitUtils.Interfaces;
 using SirRandoo.ToolkitUtils.Utils;
 using ToolkitCore.Utilities;
 using TwitchLib.Client.Models.Interfaces;
@@ -30,8 +32,10 @@ namespace SirRandoo.ToolkitUtils.Commands
     [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public class Dye : CommandBase
     {
-        private string _invoker;
-        private Pawn _pawn;
+        public override async Task RunCommandAsync(IContext context)
+        {
+            if (!PurchaseHelper.TryGetPawn(context.User.Username, out Pawn pawn)) { }
+        }
 
         public override void RunCommand([NotNull] ITwitchMessage message)
         {

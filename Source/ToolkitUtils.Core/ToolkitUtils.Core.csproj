@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net472</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <AssemblyName>0$(SolutionName).Core</AssemblyName>
+        <RootNamespace>SirRandoo.ToolkitUtils</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\ToolkitUtils.Api\ToolkitUtils.Api.csproj"/>
+    </ItemGroup>
+</Project>

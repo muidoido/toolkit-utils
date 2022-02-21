@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net472</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <AssemblyName>0$(SolutionName).Api</AssemblyName>
+        <RootNamespace>SirRandoo.ToolkitUtils</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="SirRandoo.CommonLib.Http" Version="1.1.0"/>
+        <PackageReference Include="System.Net.Http" Version="4.3.4" ExcludeAssets="runtime"/>
+        <PackageReference Include="System.Text.Json" Version="6.0.2" ExcludeAssets="runtime"/>
+    </ItemGroup>
+</Project>

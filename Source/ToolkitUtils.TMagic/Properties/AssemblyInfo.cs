@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ToolkitUtils.TMagic")]
+[assembly: AssemblyTitle("ToolkitUtils.Core.TMagic")]
 [assembly: AssemblyDescription("An assembly dedicated to TMagic compatiblity.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ToolkitUtils - A RimWorld of Magic")]
+[assembly: AssemblyProduct("ToolkitUtils.Core - A RimWorld of Magic")]
 [assembly: AssemblyCopyright("Copyright © SirRandoo 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
