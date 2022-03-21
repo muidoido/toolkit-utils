@@ -14,14 +14,8 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Threading.Tasks;
-using JetBrains.Annotations;
-using SirRandoo.ToolkitUtils.Helpers;
+using SirRandoo.ToolkitUtils.Entities;
 using SirRandoo.ToolkitUtils.Interfaces;
-using SirRandoo.ToolkitUtils.Workers;
-using ToolkitCore;
-using TwitchToolkit;
 
 namespace SirRandoo.ToolkitUtils.Models
 {
@@ -34,24 +28,15 @@ namespace SirRandoo.ToolkitUtils.Models
         public bool UseEmojis { get; set; }
 
         /// <inheritdoc/>
-        public IUserData User { get; set; }
+        public IViewer User { get; set; }
 
         /// <inheritdoc/>
         public string Message { get; set; }
 
         /// <inheritdoc/>
-        public Command Command { get; set; }
+        public CommandEntity Command { get; set; }
 
         /// <inheritdoc/>
-        [NotNull]
-        public Task Reply(string message)
-        {
-            string response = UseEmojis ? $"{User.DisplayName} {ResponseHelper.ArrowGlyph} {message}" : $"{User.DisplayName} -> {message}";
-
-            CacheWorker.Instance.Store(Message.ToLowerInvariant(), response, TimeSpan.FromMinutes(1));
-            TwitchWrapper.SendChatMessage(response);
-
-            return Task.CompletedTask;
-        }
+        public string[] Arguments { get; set; }
     }
 }
