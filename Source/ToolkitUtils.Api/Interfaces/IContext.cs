@@ -14,8 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Threading.Tasks;
-using TwitchToolkit;
+using SirRandoo.ToolkitUtils.Entities;
 
 namespace SirRandoo.ToolkitUtils.Interfaces
 {
@@ -23,10 +22,9 @@ namespace SirRandoo.ToolkitUtils.Interfaces
     {
         string Prefix { get; set; }
         bool UseEmojis { get; set; }
-        IUserData User { get; set; }
+        IViewer User { get; set; }
         string Message { get; set; }
-        Command Command { get; set; }
-
-        Task Reply(string message);
+        CommandEntity Command { get; set; }
+        string[] Arguments { get; set; }
     }
 }
