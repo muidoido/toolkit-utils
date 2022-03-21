@@ -30,7 +30,7 @@ namespace SirRandoo.ToolkitUtils.Helpers
         {
             var func = new Func<string>(source.TranslateSimple);
 
-            return await func.OnMainThreadAsync();
+            return await func.OnMainAsync();
         }
 
         [ItemNotNull]
@@ -38,21 +38,21 @@ namespace SirRandoo.ToolkitUtils.Helpers
         {
             var func = new Func<string>(() => source.TranslateWithBackup(backup));
 
-            return await func.OnMainThreadAsync();
+            return await func.OnMainAsync();
         }
 
         public static async Task<string> TranslateAsync(this string source, params NamedArgument[] arguments)
         {
             var func = new Func<string>(() => source.Translate(arguments));
 
-            return await func.OnMainThreadAsync();
+            return await func.OnMainAsync();
         }
 
         public static async Task<bool> CanTranslateAsync(this string source)
         {
             var func = new Func<bool>(source.CanTranslate);
 
-            return await func.OnMainThreadAsync();
+            return await func.OnMainAsync();
         }
     }
 }
