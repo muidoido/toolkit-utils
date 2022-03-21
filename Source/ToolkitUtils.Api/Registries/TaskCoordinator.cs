@@ -23,9 +23,9 @@ using Verse;
 namespace SirRandoo.ToolkitUtils.Registries
 {
     [StaticConstructorOnStartup]
-    public static class EnvironmentRegistry
+    public static class TaskCoordinator
     {
-        static EnvironmentRegistry()
+        static TaskCoordinator()
         {
             MainThreadScheduler = TaskScheduler.FromCurrentSynchronizationContext();
 
@@ -40,6 +40,10 @@ namespace SirRandoo.ToolkitUtils.Registries
         public static TaskScheduler MainThreadScheduler { get; }
         public static TaskFactory MainThreadFactory { get; }
 
-        public static async Task<T> OnMainThreadAsync<T>([NotNull] this Func<T> func) => await MainThreadFactory.StartNew(func);
+        public static async Task<T> OnMainAsync<T>([NotNull] this Func<T> func) => await MainThreadFactory.StartNew(func);
+
+        public static async Task OnMainAsync([NotNull] this Action func) => await MainThreadFactory.StartNew(func);
+
+        public static async Task<T> TryGetCompAsync<T>([NotNull] this Thing thing) where T : ThingComp => await MainThreadFactory.StartNew(thing.TryGetComp<T>);
     }
 }
