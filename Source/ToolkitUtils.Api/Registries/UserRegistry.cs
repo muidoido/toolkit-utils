@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Collections.Concurrent;
+using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using SirRandoo.ToolkitUtils.Flags;
@@ -28,21 +28,36 @@ namespace SirRandoo.ToolkitUtils.Registries
 {
     public static class UserRegistry
     {
-        private static readonly ConcurrentDictionary<string, IUserData> UserData = new ConcurrentDictionary<string, IUserData>();
+        private static readonly List<IUser> UserData = new List<IUser>();
+        private static readonly Dictionary<string, IUser> UserDataKeyed = new Dictionary<string, IUser>();
 
         [CanBeNull]
-        public static IUserData Get([NotNull] string id) => UserData.TryGetValue(id, out IUserData data) ? data : null;
+        public static IUser Get([NotNull] string id)
+        {
+            lock (UserData)
+            {
+                return UserDataKeyed.TryGetValue(id, out IUser data) ? data : null;
+            }
+        }
 
         [CanBeNull]
-        public static IUserData Get([NotNull] ITwitchMessage message)
+        public static IUser Get([NotNull] ITwitchMessage message)
         {
             TwitchLibMessage mess = (TwitchLibMessage)message.WhisperMessage ?? message.ChatMessage;
 
             return Get(mess.UserId);
         }
 
+        public static IUser GetByName([NotNull] string name)
+        {
+            lock (UserData)
+            {
+                return UserData.Find(d => d.DisplayName.Equals(name, StringComparison.OrdinalIgnoreCase));
+            }
+        }
+
         [ContractAnnotation("=> false,data:null; => true,data:notnull")]
-        public static bool TryGet([NotNull] string id, out IUserData data)
+        public static bool TryGet([NotNull] string id, out IUser data)
         {
             data = Get(id);
 
@@ -50,26 +65,41 @@ namespace SirRandoo.ToolkitUtils.Registries
         }
 
         [ContractAnnotation("=> false,data:null; => true,data:notnull")]
-        public static bool TryGet([NotNull] ITwitchMessage message, out IUserData data)
+        public static bool TryGet([NotNull] ITwitchMessage message, out IUser data)
         {
             data = Get(message);
 
             return data != null;
         }
 
-        public static IUserData Update([NotNull] ITwitchMessage message)
+        [ContractAnnotation("=> false,data:null; => true,data:notnull")]
+        public static bool TryGetByName([NotNull] string name, out IUser data)
         {
-            TwitchLibMessage mess = (TwitchLibMessage)message.WhisperMessage ?? message.ChatMessage;
+            data = Get(name);
 
-            return UserData.AddOrUpdate(mess.UserId, key => CreateUserData(message), (key, oldValue) => CreateUserData(message));
+            return data != null;
         }
 
         [NotNull]
-        private static IUserData CreateUserData([NotNull] ITwitchMessage message)
+        public static IUser Update([NotNull] ITwitchMessage message)
+        {
+            lock (UserData)
+            {
+                IUser data = CreateViewer(message);
+
+                UserDataKeyed[data.Id] = data;
+                UserData.Add(data);
+
+                return data;
+            }
+        }
+
+        [NotNull]
+        private static IUser CreateViewer([NotNull] ITwitchMessage message)
         {
             TwitchLibMessage mess = (TwitchLibMessage)message.WhisperMessage ?? message.ChatMessage;
 
-            var data = new UserData
+            var data = new Viewer
             {
                 Id = mess.UserId,
                 Username = mess.Username,
@@ -108,6 +138,20 @@ namespace SirRandoo.ToolkitUtils.Registries
         }
 
         [ContractAnnotation("=> true,data:notnull; => false,data:null")]
-        private static bool Remove([NotNull] string id, out IUserData data) => UserData.TryRemove(id, out data);
+        private static bool Remove([NotNull] string id, out IUser data)
+        {
+            lock (UserData)
+            {
+                if (!UserDataKeyed.TryGetValue(id, out data))
+                {
+                    return false;
+                }
+
+                UserDataKeyed.Remove(id);
+                UserData.Remove(data);
+
+                return true;
+            }
+        }
     }
 }
