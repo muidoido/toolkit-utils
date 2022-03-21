@@ -22,13 +22,11 @@ using TwitchToolkit.Utilities;
 
 namespace SirRandoo.ToolkitUtils.Models
 {
-    public class UserData : IUserData, IEquatable<IUserData>
+    public class Viewer : IViewer
     {
-        private Viewer _viewerData;
+        private TwitchToolkit.Viewer _viewerData;
 
-        public bool Equals(IUserData other) => other != null && Id == other.Id;
-
-        /// <inheritdoc cref="IUserData.Id"/>
+        /// <inheritdoc cref="IViewer.Id"/>
         public string Id { get; set; }
 
         /// <inheritdoc/>
@@ -88,7 +86,7 @@ namespace SirRandoo.ToolkitUtils.Models
             }
         }
 
-        /// <inheritdoc cref="IUserData.Username"/>
+        /// <inheritdoc cref="IViewer.Username"/>
         public string Username { get; set; }
 
         /// <inheritdoc/>
@@ -98,14 +96,14 @@ namespace SirRandoo.ToolkitUtils.Models
             set => ViewerData.last_seen = value;
         }
 
-        /// <inheritdoc cref="IUserData.DisplayName"/>
+        /// <inheritdoc cref="IViewer.DisplayName"/>
         public string DisplayName { get; set; }
 
-        /// <inheritdoc cref="IUserData.UserType"/>
+        /// <inheritdoc cref="IViewer.UserType"/>
         public UserTypes UserType { get; set; }
 
         /// <inheritdoc/>
-        public Viewer ViewerData
+        public TwitchToolkit.Viewer ViewerData
         {
             get => _viewerData ??= Viewers.GetViewer(Username);
             set => _viewerData = value;

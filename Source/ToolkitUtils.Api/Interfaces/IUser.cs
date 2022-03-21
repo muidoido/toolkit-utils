@@ -14,27 +14,17 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using SirRandoo.ToolkitUtils.Flags;
 using TwitchToolkit;
 
 namespace SirRandoo.ToolkitUtils.Interfaces
 {
-    public interface IUserData
+    public interface IUser
     {
         string Id { get; set; }
         string Username { get; set; }
         string DisplayName { get; set; }
-        UserTypes UserType { get; set; }
-
-        int Income { get; }
         int Coins { get; set; }
         int Karma { get; set; }
         Viewer ViewerData { get; set; }
-        DateTime LastSeen { get; set; }
-        bool IsModerator { get; }
-        bool IsBroadcaster { get; }
-        bool IsSubscriber { get; }
-        bool IsVip { get; }
     }
 }
