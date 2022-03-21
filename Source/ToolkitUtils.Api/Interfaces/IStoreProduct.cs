@@ -17,11 +17,21 @@
 namespace SirRandoo.ToolkitUtils.Interfaces
 {
     /// <summary>
-    ///     An interface for outlining the data necessary
-    ///     for purchasable goods within Toolkit's store.
+    ///     An interface for outlining the data necessary for purchasable
+    ///     goods within Toolkit's store.
     /// </summary>
-    public interface IStoreProduct
+    public interface IStoreProduct<TP, TD> where TD : IProductMetadata<TP>
     {
+        /// <summary>
+        ///     The product the viewer is purchasing in-game.
+        /// </summary>
+        TP Product { get; set; }
+
+        /// <summary>
+        ///     The product type's associated metadata.
+        /// </summary>
+        TD Metadata { get; set; }
+
         /// <summary>
         ///     The cost of the product.
         /// </summary>
@@ -30,17 +40,21 @@ namespace SirRandoo.ToolkitUtils.Interfaces
         /// <summary>
         ///     The human readable name of the product.
         /// </summary>
-        string Name { get; set; }
+        string Name { get; }
 
         /// <summary>
         ///     The text a viewer must type in order to purchase this product.
         /// </summary>
-        string PurchaseCode { get; set; }
+        /// <remarks>
+        ///     This should typically be <see cref="Name"/> without spaces. The
+        ///     mod naturally compares purchase codes case insensitively.
+        /// </remarks>
+        string Code { get; set; }
 
         /// <summary>
         ///     The internal id of the product.
         /// </summary>
-        string DefName { get; set; }
+        string Id { get; }
 
         /// <summary>
         ///     Whether or not the product is currently purchasable.
@@ -48,7 +62,14 @@ namespace SirRandoo.ToolkitUtils.Interfaces
         bool Purchasable { get; set; }
 
         /// <summary>
+        ///     Loads the data from a given def.
         /// </summary>
-        string Mod { get; set; }
+        /// <param name="def">The def to load metadata from</param>
+        /// <remarks>
+        ///     This method is only called once when a new def is detected, and a
+        ///     product line exists for a given def, and once more when the user
+        ///     resets a product's data to its defaults.
+        /// </remarks>
+        void LoadFromDef(TP def);
     }
 }
