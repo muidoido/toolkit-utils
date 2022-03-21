@@ -16,6 +16,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using JetBrains.Annotations;
 using SirRandoo.ToolkitUtils.Defs;
 
 namespace SirRandoo.ToolkitUtils.Services
@@ -32,38 +34,115 @@ namespace SirRandoo.ToolkitUtils.Services
     /// </remarks>
     public static class PersonaService
     {
+        private static readonly ReaderWriterLockSlim Lock = new ReaderWriterLockSlim();
         private static readonly List<PersonaThingComp> Personas = new List<PersonaThingComp>();
 
         /// <summary>
         ///     Gets a persona for a given user.
         /// </summary>
         /// <param name="userId">The id of the user the persona is for.</param>
-        /// <returns></returns>
+        /// <returns>
+        ///     The persona of the user, or <c>null</c> if they don't have a
+        ///     persona
+        /// </returns>
         public static PersonaThingComp GetPersona(string userId)
         {
-            return Personas.Find(p => p.UserId == userId);
+            if (!Lock.TryEnterReadLock(500))
+            {
+                return null;
+            }
+
+            PersonaThingComp comp = Personas.Find(p => p.UserId == userId);
+
+            Lock.ExitReadLock();
+
+            return comp;
         }
 
-        [Obsolete]
+        [Obsolete("Name comparisons are deprecated, and implementors should use the viewer's id instead.")]
         public static PersonaThingComp GetPersonaByName(string username)
         {
-            return Personas.Find(p => string.Equals(username, p.UserData?.DisplayName) || string.Equals(username, p.UserData?.Username));
+            if (!Lock.TryEnterReadLock(500))
+            {
+                return null;
+            }
+
+            PersonaThingComp comp = Personas.Find(p => string.Equals(username, p.Viewer?.DisplayName) || string.Equals(username, p.Viewer?.Username));
+
+            Lock.ExitReadLock();
+
+            return comp;
         }
 
-        internal static void RegisterPersona(PersonaThingComp comp) => Personas.Add(comp);
-        internal static void UnregisterPersona(PersonaThingComp comp) => Personas.Remove(comp);
-        internal static bool Contains(PersonaThingComp comp) => Personas.Contains(comp);
-
-        internal static bool TryRegister(PersonaThingComp comp)
+        internal static void RegisterPersona(PersonaThingComp comp)
         {
-            if (Personas.Contains(comp))
+            if (!Lock.TryEnterWriteLock(500))
+            {
+                return;
+            }
+
+            Personas.Add(comp);
+            Lock.ExitWriteLock();
+        }
+
+        internal static void UnregisterPersona(PersonaThingComp comp)
+        {
+            if (!Lock.TryEnterWriteLock(300))
+            {
+                return;
+            }
+
+            Personas.Remove(comp);
+            Lock.ExitWriteLock();
+        }
+
+        internal static bool Contains(PersonaThingComp comp)
+        {
+            if (!Lock.TryEnterReadLock(500))
             {
                 return false;
             }
 
+            bool contains = Personas.Contains(comp);
+            Lock.ExitReadLock();
+
+            return contains;
+        }
+
+        internal static bool TryRegister(PersonaThingComp comp)
+        {
+            if (!Lock.TryEnterUpgradeableReadLock(500))
+            {
+                return false;
+            }
+
+            if (Personas.Contains(comp))
+            {
+                Lock.ExitUpgradeableReadLock();
+
+                return false;
+            }
+
+            if (!Lock.TryEnterWriteLock(500))
+            {
+                Lock.ExitUpgradeableReadLock();
+
+                return false;
+            }
+
             Personas.Add(comp);
+            Lock.ExitWriteLock();
+            Lock.ExitUpgradeableReadLock();
 
             return true;
+        }
+
+        [ContractAnnotation("=> true,comp:notnull; => false,comp:null")]
+        public static bool TryGetPersona(string userId, out PersonaThingComp comp)
+        {
+            comp = GetPersona(userId);
+
+            return comp != null;
         }
     }
 }

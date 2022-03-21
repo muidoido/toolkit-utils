@@ -31,20 +31,19 @@ namespace SirRandoo.ToolkitUtils.Defs
 
         private int _attempts;
         private Pawn _pawn;
-        public IUserData UserData;
         public string UserId;
+        public IUser Viewer;
 
-        [CanBeNull]
-        public Pawn Pawn => _pawn ??= parent as Pawn;
+        [CanBeNull] public Pawn Pawn => _pawn ??= parent as Pawn;
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            if (_attempts >= 5 || string.IsNullOrEmpty(UserId) || UserData != null)
+            if (_attempts >= 5 || string.IsNullOrEmpty(UserId) || Viewer != null)
             {
                 return;
             }
 
-            if (!UserRegistry.TryGet(UserId, out UserData))
+            if (!UserRegistry.TryGet(UserId, out Viewer))
             {
                 _attempts++;
 
@@ -60,7 +59,7 @@ namespace SirRandoo.ToolkitUtils.Defs
 
             PersonaService.TryRegister(this);
 
-            if (string.Equals(parent.LabelShort, UserData.DisplayName))
+            if (string.Equals(parent.LabelShort, Viewer.DisplayName))
             {
                 return;
             }
@@ -68,11 +67,11 @@ namespace SirRandoo.ToolkitUtils.Defs
             switch (Pawn.Name)
             {
                 case NameTriple triple:
-                    Pawn.Name = new NameTriple(triple.First, UserData.DisplayName, triple.Last);
+                    Pawn.Name = new NameTriple(triple.First, Viewer.DisplayName, triple.Last);
 
                     return;
                 case NameSingle _:
-                    Pawn.Name = new NameSingle(UserData.DisplayName);
+                    Pawn.Name = new NameSingle(Viewer.DisplayName);
 
                     return;
             }
@@ -88,12 +87,12 @@ namespace SirRandoo.ToolkitUtils.Defs
         {
             const string part = "Connected to";
 
-            if (UserData == null)
+            if (Viewer == null)
             {
                 return part + " None " + (_attempts >= 5 ? "(auto-link timed out)" : "(attempting auto-link...)");
             }
 
-            return part + " " + UserData.DisplayName;
+            return part + " " + Viewer.DisplayName;
         }
 
         public override void PostExposeData()
