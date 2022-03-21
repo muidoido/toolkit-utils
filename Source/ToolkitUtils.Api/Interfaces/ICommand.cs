@@ -14,12 +14,43 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.Threading.Tasks;
 
 namespace SirRandoo.ToolkitUtils.Interfaces
 {
+    /// <summary>
+    ///     An interface for defining commands within the mod.
+    /// </summary>
     public interface ICommand
     {
-        Task RunCommandAsync(IContext context);
+        /// <summary>
+        ///     Called prior immediately before <see cref="ExecuteAsync"/>.
+        /// </summary>
+        /// <param name="context">The given context of the command's execution</param>
+        /// <returns>Whether or not the command should be invoked</returns>
+        Task<bool> BeforeExecuteAsync(IContext context);
+
+        /// <summary>
+        ///     Called immediately after <see cref="BeforeExecuteAsync"/>, if it
+        ///     returns <c>true</c>.
+        /// </summary>
+        /// <param name="context">The given context of the command's execution</param>
+        /// <returns>The associated response of the message.</returns>
+        Task<IResponse> ExecuteAsync(IContext context);
+
+        /// <summary>
+        ///     Called immediately after <see cref="ExecuteAsync"/>.
+        /// </summary>
+        /// <param name="context">The given context of the command's execution</param>
+        /// <param name="response">
+        ///     The <see cref="IResponse"/> object returned
+        ///     from <see cref="ExecuteAsync"/>
+        /// </param>
+        /// <param name="exception">
+        ///     The exception that was thrown when the
+        ///     command was executed
+        /// </param>
+        Task AfterExecuteAsync(IContext context, IResponse response, Exception exception = null);
     }
 }
