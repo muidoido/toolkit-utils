@@ -18,6 +18,5 @@ using System;
 
 namespace SirRandoo.ToolkitUtils.Flags
 {
-    [Flags]
-    public enum PlatformCapabilities { None = 0 }
+    [Flags] public enum Capabilities { None = 0, Polls = 1, Redemptions = 2 }
 }
