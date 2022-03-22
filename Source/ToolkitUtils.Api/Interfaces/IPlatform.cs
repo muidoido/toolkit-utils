@@ -14,10 +14,17 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Threading.Tasks;
+using SirRandoo.ToolkitUtils.Flags;
+
 namespace SirRandoo.ToolkitUtils.Interfaces
 {
     public interface IPlatform
     {
         string PlatformId { get; }
+        Capabilities SupportedCapabilities { get; }
+
+        Task SendMessageAsync(string message);
+        Task SendPrivateMessageAsync(string user, string message);
     }
 }
