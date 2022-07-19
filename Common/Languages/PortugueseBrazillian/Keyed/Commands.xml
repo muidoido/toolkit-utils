@@ -20,107 +20,107 @@
 
 <LanguageData>
     <!-- Balance -->
-    <TKUtils.Balance.Coins>coins</TKUtils.Balance.Coins>
+    <TKUtils.Balance.Coins>moedas</TKUtils.Balance.Coins>
     <TKUtils.Balance.Karma>karma</TKUtils.Balance.Karma>
-    <TKUtils.Balance.Rate>Earning {0} coins every {1} minute(s)</TKUtils.Balance.Rate>
+    <TKUtils.Balance.Rate>Recebendo {0} moedas a cada {1} minuto(s)</TKUtils.Balance.Rate>
 
     <!-- Give All -->
-    <TKUtils.GiveAll>Gave {0} coins to {1} viewers.</TKUtils.GiveAll>
+    <TKUtils.GiveAll>Deu {0} moedas para {1} espectadores.</TKUtils.GiveAll>
 
     <!-- Give Coins -->
-    <TKUtils.GiveCoins.Moderators>Moderators cannot give coins to other moderators.</TKUtils.GiveCoins.Moderators>
-    <TKUtils.GiveCoins.Alts>You cannot give coins to yourself or alternate accounts.</TKUtils.GiveCoins.Alts>
-    <TKUtils.GiveCoins.Done>Gave {0} coins to {1}. Their new balance is {2} coins.</TKUtils.GiveCoins.Done>
+    <TKUtils.GiveCoins.Moderators>Moderdores não podem dar moedas para outros moderadores.</TKUtils.GiveCoins.Moderators>
+    <TKUtils.GiveCoins.Alts>Você não pode dar moedas para você mesmo ou para contas alternativas.</TKUtils.GiveCoins.Alts>
+    <TKUtils.GiveCoins.Done>Deu {0} moedas para {1}. O saldo de {1} agora é de {2} moedas.</TKUtils.GiveCoins.Done>
 
     <!-- Database -->
-    <TKUtils.Database.Stats>stats</TKUtils.Database.Stats>
+    <TKUtils.Database.Stats>estatísticas</TKUtils.Database.Stats>
 
     <!-- Dye -->
-    <TKUtils.Dye.Complete>Your apparel has been dyed.</TKUtils.Dye.Complete>
+    <TKUtils.Dye.Complete>Seu equipamento foi tingido.</TKUtils.Dye.Complete>
 
     <!-- Colonist Count -->
-    <TKUtils.ColonistCount.None>It's a ghost town, Timmy.</TKUtils.ColonistCount.None>
-    <TKUtils.ColonistCount.Any>There are {0} colonists left.</TKUtils.ColonistCount.Any>
+    <TKUtils.ColonistCount.None>É uma cidade fantasma, Timmy.</TKUtils.ColonistCount.None>
+    <TKUtils.ColonistCount.Any>Existem {0} colonistas vivos.</TKUtils.ColonistCount.Any>
 
     <!-- Factions -->
-    <TKUtils.Factions.None>There are no factions.</TKUtils.Factions.None>
+    <TKUtils.Factions.None>Não há facções.</TKUtils.Factions.None>
 
     <!-- Leave -->
-    <TKUtils.Leave.Thanos>Mr. Stark, I don't feel so good...</TKUtils.Leave.Thanos>
-    <TKUtils.Leave.Generic>You've left the colony.</TKUtils.Leave.Generic>
-    <TKUtils.Leave.Caravan>You cannot leave while in a caravan.</TKUtils.Leave.Caravan>
-    <TKUtils.Leave.Undead>You cannot leave the colony; you're bound to a Necromancer.</TKUtils.Leave.Undead>
+    <TKUtils.Leave.Thanos>Sr. Stark, eu não me sinto muito bem...</TKUtils.Leave.Thanos>
+    <TKUtils.Leave.Generic>Você abandonou a colônia.</TKUtils.Leave.Generic>
+    <TKUtils.Leave.Caravan>Você não pode sair enquanto estiver em uma caravana.</TKUtils.Leave.Caravan>
+    <TKUtils.Leave.Undead>Você não pode sair da colônia; Você está preso a um Necromante.</TKUtils.Leave.Undead>
 
     <!-- Lookup -->
-    <TKUtils.Lookup>Results for "{0}": {1}</TKUtils.Lookup>
+    <TKUtils.Lookup>Resultados para "{0}": {1}</TKUtils.Lookup>
 
     <!-- Pawn Class -->
-    <TKUtils.PawnClass.Might>Might</TKUtils.PawnClass.Might>
-    <TKUtils.PawnClass.Magic>Magic</TKUtils.PawnClass.Magic>
+    <TKUtils.PawnClass.Might>Força</TKUtils.PawnClass.Might>
+    <TKUtils.PawnClass.Magic>Magia</TKUtils.PawnClass.Magic>
     <TKUtils.PawnClass.Experience>EXP {0}/{1}</TKUtils.PawnClass.Experience>
-    <TKUtils.PawnClass.Level>Level {0}</TKUtils.PawnClass.Level>
-    <TKUtils.PawnClass.Stamina>Stamina</TKUtils.PawnClass.Stamina>
+    <TKUtils.PawnClass.Level>Nível {0}</TKUtils.PawnClass.Level>
+    <TKUtils.PawnClass.Stamina>Estamina</TKUtils.PawnClass.Stamina>
     <TKUtils.PawnClass.Mana>Mana</TKUtils.PawnClass.Mana>
-    <TKUtils.PawnClass.None>You do not have a class.</TKUtils.PawnClass.None>
-    <TKUtils.PawnClass.Points>{0} point(s) available.</TKUtils.PawnClass.Points>
+    <TKUtils.PawnClass.None>Você não tem classe.</TKUtils.PawnClass.None>
+    <TKUtils.PawnClass.Points>{0} ponto(s) disponíveis.</TKUtils.PawnClass.Points>
 
     <!-- Pawn Relations -->
-    <TKUtils.PawnRelations.None>You don't have any relationships with other viewers.</TKUtils.PawnRelations.None>
+    <TKUtils.PawnRelations.None>Você não tem nenhum relacionamento com outros espectadores.</TKUtils.PawnRelations.None>
 
     <!-- Fix All -->
-    <TKUtils.FixAll>Successfully relinked all pawns in Twitch Toolkit.</TKUtils.FixAll>
+    <TKUtils.FixAll>Religou todos os personagens no Twitch Toolkit com sucesso.</TKUtils.FixAll>
 
     <!-- Fix Me -->
-    <TKUtils.PawnFix>You've been successfully relinked in Twitch Toolkit.</TKUtils.PawnFix>
+    <TKUtils.PawnFix>Você foi religado no Twitch Toolkit com sucesso.</TKUtils.PawnFix>
 
     <!-- Pawn Health -->
-    <TKUtils.PawnHealth.InvalidCapacity>No capacity by the name of "{0}" could be found.</TKUtils.PawnHealth.InvalidCapacity>
-    <TKUtils.PawnHealth.IncapableOfCapacity>Your pawn does not have the capacity "{0}".</TKUtils.PawnHealth.IncapableOfCapacity>
-    <TKUtils.PawnHealth.QueuedSurgeries>Queued sugeries</TKUtils.PawnHealth.QueuedSurgeries>
-    <TKUtils.PawnHealth.OverallHealth>Overall health</TKUtils.PawnHealth.OverallHealth>
-    <TKUtils.PawnHealth.AffectedBy>Affected by</TKUtils.PawnHealth.AffectedBy>
+    <TKUtils.PawnHealth.InvalidCapacity>Nenhuma capacidade de nome "{0}" foi encontrada.</TKUtils.PawnHealth.InvalidCapacity>
+    <TKUtils.PawnHealth.IncapableOfCapacity>Seu personagem não tem a capacidade "{0}".</TKUtils.PawnHealth.IncapableOfCapacity>
+    <TKUtils.PawnHealth.QueuedSurgeries>Fila de cirurgias</TKUtils.PawnHealth.QueuedSurgeries>
+    <TKUtils.PawnHealth.OverallHealth>Saúde em geral</TKUtils.PawnHealth.OverallHealth>
+    <TKUtils.PawnHealth.AffectedBy>Sob efeito de</TKUtils.PawnHealth.AffectedBy>
 
     <!-- Pawn Kills -->
     <TKUtils.PawnKills.Total>total</TKUtils.PawnKills.Total>
-    <TKUtils.PawnKills.Mechanoids>mechanoids</TKUtils.PawnKills.Mechanoids>
-    <TKUtils.PawnKills.Animals>animals</TKUtils.PawnKills.Animals>
-    <TKUtils.PawnKills.Humanlike>humanlike</TKUtils.PawnKills.Humanlike>
+    <TKUtils.PawnKills.Mechanoids>mecanóides</TKUtils.PawnKills.Mechanoids>
+    <TKUtils.PawnKills.Animals>animais</TKUtils.PawnKills.Animals>
+    <TKUtils.PawnKills.Humanlike>humanóides</TKUtils.PawnKills.Humanlike>
 
     <!-- Pawn Needs -->
-    <TKUtils.PawnNeeds.None>Your pawn has no needs.</TKUtils.PawnNeeds.None>
+    <TKUtils.PawnNeeds.None>Seu personagem não precisa de nada.</TKUtils.PawnNeeds.None>
 
     <!-- Pawn Work -->
-    <TKUtils.PawnWork.Header>Work priorities</TKUtils.PawnWork.Header>
-    <TKUtils.PawnWork.Changed>The following work priories have been changed: {0}</TKUtils.PawnWork.Changed>
+    <TKUtils.PawnWork.Header>Prioridades de trabalho</TKUtils.PawnWork.Header>
+    <TKUtils.PawnWork.Changed>As seguintes prioridades de trabalho foram modificadas: {0}</TKUtils.PawnWork.Changed>
     <TKUtils.PawnWork.None>Your pawn cannot do any work.</TKUtils.PawnWork.None>
 
     <!-- Price -->
-    <TKUtils.Price.Quantity>{0} - {1} coins each ({2} total coins required to purchase {3} item(s))</TKUtils.Price.Quantity>
-    <TKUtils.Price.AddTrait>{0} coins to add</TKUtils.Price.AddTrait>
-    <TKUtils.Price.RemoveTrait>{0} coins to remove</TKUtils.Price.RemoveTrait>
-    <TKUtils.Price.Limited>{0} - {1} coins</TKUtils.Price.Limited>
-    <TKUtils.Price.Overridden>This event pulls prices from the "{0}" category.</TKUtils.Price.Overridden>
-    <TKUtils.Price.External>This event's final price is determined by an external system.</TKUtils.Price.External>
-    <TKUtils.Price.Variables>{0} - {1} coins * X</TKUtils.Price.Variables>
+    <TKUtils.Price.Quantity>{0} - {1} moedas cada ({2} moedas necessárias para comprar {3} item(s))</TKUtils.Price.Quantity>
+    <TKUtils.Price.AddTrait>{0} moedas para adicionar</TKUtils.Price.AddTrait>
+    <TKUtils.Price.RemoveTrait>{0} moedas para remover</TKUtils.Price.RemoveTrait>
+    <TKUtils.Price.Limited>{0} - {1} moedas</TKUtils.Price.Limited>
+    <TKUtils.Price.Overridden>Este evento pega preços da categoria "{0}".</TKUtils.Price.Overridden>
+    <TKUtils.Price.External>O preço final desse evento é determinado por um sistema externo.</TKUtils.Price.External>
+    <TKUtils.Price.Variables>{0} - {1} moedas * X</TKUtils.Price.Variables>
 
     <!-- Toggle Store -->
-    <TKUtils.ToggleStore.Enabled>Toolkit's store has been enabled.</TKUtils.ToggleStore.Enabled>
-    <TKUtils.ToggleStore.Disabled>Toolkit's store has been disabled.</TKUtils.ToggleStore.Disabled>
+    <TKUtils.ToggleStore.Enabled>A loja do Toolkit foi habilitada.</TKUtils.ToggleStore.Enabled>
+    <TKUtils.ToggleStore.Disabled>A loja do Toolkit foi desabilitada.</TKUtils.ToggleStore.Disabled>
 
     <!-- Research -->
-    <TKUtils.Research.InvalidQuery>No research project by the name of "{0}" could be found.</TKUtils.Research.InvalidQuery>
-    <TKUtils.Research.None>The colony is not currently researching anything.</TKUtils.Research.None>
+    <TKUtils.Research.InvalidQuery>Nenhum projeto com nome "{0}" foi encontrado.</TKUtils.Research.InvalidQuery>
+    <TKUtils.Research.None>Atualmente a colônia não está pesquisando nada.</TKUtils.Research.None>
 
     <!-- Unstick -->
-    <TKUtils.Unstick>Unstuck {0} viewers.</TKUtils.Unstick>
+    <TKUtils.Unstick>Desobstruiu {0} espectadores.</TKUtils.Unstick>
 
     <!-- Unstick Me -->
-    <TKUtils.UnstickMe.Complete>You've been removed from pause limbo.</TKUtils.UnstickMe.Complete>
-    <TKUtils.UnstickMe.Queued>Your request is being processed.</TKUtils.UnstickMe.Queued>
+    <TKUtils.UnstickMe.Complete>Você foi removido do limbo da pausa.</TKUtils.UnstickMe.Complete>
+    <TKUtils.UnstickMe.Queued>A sua solicitação está sendo processada.</TKUtils.UnstickMe.Queued>
 
     <!-- Favorite Color -->
-    <TKUtils.FavoriteColor.Complete>Your favorite color was changed.</TKUtils.FavoriteColor.Complete>
+    <TKUtils.FavoriteColor.Complete>Sua cor favorita foi mudada.</TKUtils.FavoriteColor.Complete>
 
     <!-- Interactions -->
-    <TKUtils.Interaction.You>you</TKUtils.Interaction.You>
+    <TKUtils.Interaction.You>você</TKUtils.Interaction.You>
 </LanguageData>
