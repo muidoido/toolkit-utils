@@ -21,14 +21,14 @@
 <LanguageData>
     <!-- Purge Menu -->
     <!-- Constraints Menu -->
-    <TKUtils.PurgeMenu.Coins>coins</TKUtils.PurgeMenu.Coins>
-    <TKUtils.PurgeMenu.Time>time</TKUtils.PurgeMenu.Time>
+    <TKUtils.PurgeMenu.Coins>moedas</TKUtils.PurgeMenu.Coins>
+    <TKUtils.PurgeMenu.Time>tempo</TKUtils.PurgeMenu.Time>
     <TKUtils.PurgeMenu.Karma>karma</TKUtils.PurgeMenu.Karma>
-    <TKUtils.PurgeMenu.Banned>is banned</TKUtils.PurgeMenu.Banned>
-    <TKUtils.PurgeMenu.Vip>not vip</TKUtils.PurgeMenu.Vip>
-    <TKUtils.PurgeMenu.Sub>not subbed</TKUtils.PurgeMenu.Sub>
-    <TKUtils.PurgeMenu.Mod>not modded</TKUtils.PurgeMenu.Mod>
-    <TKUtils.PurgeMenu.Name>username</TKUtils.PurgeMenu.Name>
+    <TKUtils.PurgeMenu.Banned>está banido</TKUtils.PurgeMenu.Banned>
+    <TKUtils.PurgeMenu.Vip>não é vip</TKUtils.PurgeMenu.Vip>
+    <TKUtils.PurgeMenu.Sub>não é sub</TKUtils.PurgeMenu.Sub>
+    <TKUtils.PurgeMenu.Mod>não é mod</TKUtils.PurgeMenu.Mod>
+    <TKUtils.PurgeMenu.Name>nome de usuário</TKUtils.PurgeMenu.Name>
     <TKUtils.PurgeMenu.Greater>&gt;</TKUtils.PurgeMenu.Greater>
     <TKUtils.PurgeMenu.Equal>=</TKUtils.PurgeMenu.Equal>
     <TKUtils.PurgeMenu.Less>&lt;</TKUtils.PurgeMenu.Less>
@@ -36,20 +36,20 @@
     <TKUtils.PurgeMenu.LessEqual>&lt;=</TKUtils.PurgeMenu.LessEqual>
 
     <!-- Time Constraint Menu -->
-    <TKUtils.PurgeMenu.Hours>hours</TKUtils.PurgeMenu.Hours>
-    <TKUtils.PurgeMenu.Days>days</TKUtils.PurgeMenu.Days>
-    <TKUtils.PurgeMenu.Months>months</TKUtils.PurgeMenu.Months>
-    <TKUtils.PurgeMenu.Years>years</TKUtils.PurgeMenu.Years>
+    <TKUtils.PurgeMenu.Hours>horas</TKUtils.PurgeMenu.Hours>
+    <TKUtils.PurgeMenu.Days>dias</TKUtils.PurgeMenu.Days>
+    <TKUtils.PurgeMenu.Months>meses</TKUtils.PurgeMenu.Months>
+    <TKUtils.PurgeMenu.Years>anos</TKUtils.PurgeMenu.Years>
 
     <!-- Username Constraint Menu -->
-    <TKUtils.PurgeMenu.Is>is</TKUtils.PurgeMenu.Is>
-    <TKUtils.PurgeMenu.Not>is not</TKUtils.PurgeMenu.Not>
-    <TKUtils.PurgeMenu.Contains>contains</TKUtils.PurgeMenu.Contains>
-    <TKUtils.PurgeMenu.EndsWith>endswith</TKUtils.PurgeMenu.EndsWith>
-    <TKUtils.PurgeMenu.StartsWith>startswith</TKUtils.PurgeMenu.StartsWith>
+    <TKUtils.PurgeMenu.Is>é</TKUtils.PurgeMenu.Is>
+    <TKUtils.PurgeMenu.Not>não é</TKUtils.PurgeMenu.Not>
+    <TKUtils.PurgeMenu.Contains>contém</TKUtils.PurgeMenu.Contains>
+    <TKUtils.PurgeMenu.EndsWith>termina com</TKUtils.PurgeMenu.EndsWith>
+    <TKUtils.PurgeMenu.StartsWith>começa com</TKUtils.PurgeMenu.StartsWith>
 
 
     <!-- Item Store Menu -->
-    <TKUtils.StoreMenu.EnableCategory>Enable all in "{0}" category</TKUtils.StoreMenu.EnableCategory>
-    <TKUtils.StoreMenu.DisableCategory>Disable all in "{0}" category</TKUtils.StoreMenu.DisableCategory>
+    <TKUtils.StoreMenu.EnableCategory>Habilitar todos na categoria "{0}"</TKUtils.StoreMenu.EnableCategory>
+    <TKUtils.StoreMenu.DisableCategory>Desabiltar todos na categoria "{0}"</TKUtils.StoreMenu.DisableCategory>
 </LanguageData>
