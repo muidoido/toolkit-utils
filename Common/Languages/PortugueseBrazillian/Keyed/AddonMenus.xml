@@ -19,23 +19,23 @@
   -->
 
 <LanguageData>
-    <TKUtils.AddonMenu.Settings>Settings</TKUtils.AddonMenu.Settings>
-    <TKUtils.AddonMenu.PawnKind>Pawn Kind Config</TKUtils.AddonMenu.PawnKind>
-    <TKUtils.AddonMenu.Trait>Trait Config</TKUtils.AddonMenu.Trait>
-    <TKUtils.AddonMenu.Purge>Purge Viewers</TKUtils.AddonMenu.Purge>
-    <TKUtils.AddonMenu.Editor>Toolkit Editor</TKUtils.AddonMenu.Editor>
-    <TKUtils.AddonMenu.Events>Events</TKUtils.AddonMenu.Events>
-    <TKUtils.AddonMenu.Items>Items</TKUtils.AddonMenu.Items>
-    <TKUtils.AddonMenu.Commands>Commands</TKUtils.AddonMenu.Commands>
-    <TKUtils.AddonMenu.Viewers>Viewers</TKUtils.AddonMenu.Viewers>
-    <TKUtils.AddonMenu.NameQueue>Name queue</TKUtils.AddonMenu.NameQueue>
-    <TKUtils.AddonMenu.Tracker>Tracker</TKUtils.AddonMenu.Tracker>
-    <TKUtils.AddonMenu.ToggleCoinEarning>Toggle earning coins</TKUtils.AddonMenu.ToggleCoinEarning>
-    <TKUtils.AddonMenu.DebugFix>Debug fix</TKUtils.AddonMenu.DebugFix>
-    <TKUtils.AddonMenu.GiftCoins>Toggle coin gifting</TKUtils.AddonMenu.GiftCoins>
-    <TKUtils.AddonMenu.EditItemSettings>Edit item settings...</TKUtils.AddonMenu.EditItemSettings>
-    <TKUtils.AddonMenu.EditTraitLimit>Edit trait limit...</TKUtils.AddonMenu.EditTraitLimit>
-    <TKUtils.AddonMenu.Disconnect>Disconnect</TKUtils.AddonMenu.Disconnect>
-    <TKUtils.AddonMenu.Reconnect>Reconnect</TKUtils.AddonMenu.Reconnect>
-    <TKUtils.AddonMenu.Connect>Connect</TKUtils.AddonMenu.Connect>
+    <TKUtils.AddonMenu.Settings>Configurações</TKUtils.AddonMenu.Settings>
+    <TKUtils.AddonMenu.PawnKind>Configurações de personagens</TKUtils.AddonMenu.PawnKind>
+    <TKUtils.AddonMenu.Trait>Configuração de características</TKUtils.AddonMenu.Trait>
+    <TKUtils.AddonMenu.Purge>Resetar espectadores</TKUtils.AddonMenu.Purge>
+    <TKUtils.AddonMenu.Editor>Editor do Toolkit</TKUtils.AddonMenu.Editor>
+    <TKUtils.AddonMenu.Events>Eventos</TKUtils.AddonMenu.Events>
+    <TKUtils.AddonMenu.Items>Itens</TKUtils.AddonMenu.Items>
+    <TKUtils.AddonMenu.Commands>Comandos</TKUtils.AddonMenu.Commands>
+    <TKUtils.AddonMenu.Viewers>Espectadores</TKUtils.AddonMenu.Viewers>
+    <TKUtils.AddonMenu.NameQueue>Fila de nomes</TKUtils.AddonMenu.NameQueue>
+    <TKUtils.AddonMenu.Tracker>Rastreador</TKUtils.AddonMenu.Tracker>
+    <TKUtils.AddonMenu.ToggleCoinEarning>Ativar ganho de moedas</TKUtils.AddonMenu.ToggleCoinEarning>
+    <TKUtils.AddonMenu.DebugFix>Debug</TKUtils.AddonMenu.DebugFix>
+    <TKUtils.AddonMenu.GiftCoins>Ativar doação de moedas</TKUtils.AddonMenu.GiftCoins>
+    <TKUtils.AddonMenu.EditItemSettings>Editar configuração de itens...</TKUtils.AddonMenu.EditItemSettings>
+    <TKUtils.AddonMenu.EditTraitLimit>Editar limites de características...</TKUtils.AddonMenu.EditTraitLimit>
+    <TKUtils.AddonMenu.Disconnect>Disconectar</TKUtils.AddonMenu.Disconnect>
+    <TKUtils.AddonMenu.Reconnect>Reconectar</TKUtils.AddonMenu.Reconnect>
+    <TKUtils.AddonMenu.Connect>Conectar</TKUtils.AddonMenu.Connect>
 </LanguageData>
